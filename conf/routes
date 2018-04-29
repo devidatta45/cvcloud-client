@@ -1,0 +1,43 @@
+
+GET     /test                      com.cvcloud.client.controllers.CVCClientController.getTest
+POST    /createClient            com.cvcloud.client.controllers.CVCClientController.createClient
+GET    /clients                  com.cvcloud.client.controllers.CVCClientController.getAllClients
+GET    /client/:ref                  com.cvcloud.client.controllers.CVCClientController.getClientByRef(ref:String)
+POST   /uploadDocument/:id/:consoleId       com.cvcloud.client.controllers.CVCClientController.uploadDocument(id:String,consoleId:String)
+POST     /download                 com.cvcloud.client.controllers.CVCClientController.download
+POST     /createApproval                 com.cvcloud.client.controllers.CVCClientController.updateApproval
+POST     /createPayment                 com.cvcloud.client.controllers.CVCClientController.updatePayment
+POST     /createConsoles                 com.cvcloud.client.controllers.CVCClientController.updateConsole
+PUT     /updateConsoleSkills                 com.cvcloud.client.controllers.CVCClientController.updateConsoleSkills
+GET     /jobs/:consoleId/:reference                 com.cvcloud.client.controllers.CVCClientController.getJobsByConsole(consoleId:String,reference:String)
+POST    /createJob                  com.cvcloud.client.controllers.JobController.createJob
+POST    /updateSkills                  com.cvcloud.client.controllers.JobController.updateJob
+GET    /job/:id                  com.cvcloud.client.controllers.JobController.findJob(id:String)
+GET    /jobStatus/:id                  com.cvcloud.client.controllers.JobController.updateJobStatus(id:String)
+POST    /authenticate                  com.cvcloud.client.controllers.CVCUserController.login
+POST    /createUser                  com.cvcloud.client.controllers.CVCUserController.createUser
+GET     /details/:id               com.cvcloud.client.controllers.CVCUserController.findUser(id:String)
+GET      /logout/:id              com.cvcloud.client.controllers.CVCUserController.logout(id:String)
+
+POST    /createJobApplication            com.cvcloud.client.controllers.JobApplicationController.createJobApplication
+POST    /saveClientConsole          com.cvcloud.client.controllers.JobApplicationController.saveToClientConsole
+PUT    /approveApplication/:id          com.cvcloud.client.controllers.JobApplicationController.approveApplication(id:String)
+GET    /jobApplication/:consoleId/:reference            com.cvcloud.client.controllers.JobApplicationController.findAllCandidates(consoleId:String,reference:String)
+GET    /jobApplication            com.cvcloud.client.controllers.JobApplicationController.findAllJobApplications
+GET    /applications/:id            com.cvcloud.client.controllers.JobApplicationController.findAllApplication(id:String)
+GET    /applicationsByCandidate/:jobId/:candidateId      com.cvcloud.client.controllers.JobApplicationController.findApplicationByCandidate(jobId:String,candidateId:String)
+
+POST    /createInterview            com.cvcloud.client.controllers.InterviewController.createInterview
+GET     /interviewByCandidate/:id   com.cvcloud.client.controllers.InterviewController.getInterviewsByCandidate(id:String)
+GET     /interview/:id              com.cvcloud.client.controllers.InterviewController.getInterviewsById(id:String)
+POST    /acceptInterview            com.cvcloud.client.controllers.InterviewController.acceptInterview
+POST    /upload/:random            com.cvcloud.client.controllers.InterviewController.uploadFile(random:String)
+POST    /uploadPhoto/:random            com.cvcloud.client.controllers.InterviewController.uploadPhoto(random:String)
+GET    /interviewByClient/:clientId/:jobId           com.cvcloud.client.controllers.InterviewController.getInterviewsByClientId(clientId:String,jobId:String)
+
+POST    /skill                       com.cvcloud.client.controllers.CVCSkillController.createSkill
+GET    /skills                      com.cvcloud.client.controllers.CVCSkillController.getAllSkills
+
+GET    /news/:clientId/:consoleId                     com.cvcloud.client.controllers.NewsFeedController.getAllNews(clientId:String,consoleId:String)
+
+GET    /assets/*file             controllers.Assets.at(path="/public", file)
